@@ -26,6 +26,7 @@ app.post("/api/lists", async (request, response) => {
   try {
     const list = new List({
       items: body.items,
+      name: body.name
     });
 
     const savedList = await list.save();
@@ -34,6 +35,17 @@ app.post("/api/lists", async (request, response) => {
     return response.status(400).json({ error: "error posting list" });
   }
 });
+
+app.delete("/api/lists/:id", async (request, response) => {
+    const listId = request.params.id
+
+    try {
+        await List.findByIdAndDelete(listId)
+        return response.status(204).end()
+    } catch (error) {
+        return response.status(400).json({ error: "error deleting list"})
+    }
+})
 
 mongoose
   .connect(process.env.MONGODB_URI)

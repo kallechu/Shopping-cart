@@ -1,0 +1,25 @@
+
+
+#lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+  min-height: 100vh;
+  gap: 20px;
+}
+
+.box {
+  
+  background-color: rgb(31, 20, 0);
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 2px 2px 5px gray;
+  color: white
+}
+
+body {
+    background-color: rgb(73, 63, 63);
+    
+}

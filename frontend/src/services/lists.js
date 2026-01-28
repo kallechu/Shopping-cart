@@ -10,4 +10,12 @@ const getAll = async () => {
   }
 };
 
-export default { getAll };
+const deleteList = async (id) => {
+    try {
+        await axios.delete(`${baseUrl}/${id}`)
+    } catch (error) {
+        console.error('error deleting list', error)
+    }
+}
+
+export default { getAll, deleteList };
