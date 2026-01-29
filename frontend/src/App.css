@@ -38,6 +38,12 @@
   box-shadow: 5px 5px 10px rgb(124, 123, 123);
   border: 2px solid rgb(110, 84, 84);
   font-family: sans-serif;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.box:hover {
+  background-color: #3b3e41;
 }
 
 .container {
