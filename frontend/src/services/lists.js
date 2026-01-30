@@ -18,4 +18,22 @@ const deleteList = async (id) => {
     }
 }
 
-export default { getAll, deleteList };
+const createList = async blog => {
+  try {
+    const response = await axios.post(baseUrl, blog)
+    return response.data
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+const updateList = async (id, list) => {
+  try {
+    const response = await axios.post(`${baseUrl}/${id}/items`, list)
+    return response.data
+  } catch (error) {
+    console.error('error updating list', error)
+  }
+}
+
+export default { getAll, deleteList, createList, updateList };

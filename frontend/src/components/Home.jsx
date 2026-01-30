@@ -1,7 +1,9 @@
 import Lists from "./Lists";
+import CreateList from "./CreateList";
 
-const Home = ({ lists }) => (
+const Home = ({ lists, createList }) => (
   <div className="container">
+    <CreateList createList={createList} />
     <div className="main-box">
       <h1>Shopping List</h1>
       <div className="lists">

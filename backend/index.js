@@ -47,6 +47,22 @@ app.delete("/api/lists/:id", async (request, response) => {
     }
 })
 
+app.post("/api/lists/:id/items", async (request, response) => {
+  const listId = request.params.id
+  const { product, count } = request.body
+
+  try {
+    const list = await List.findById(listId)
+
+    list.items.push({ product, count })
+    const savedList = await list.save()
+
+    response.status(201).json(savedList)
+  } catch (error) {
+    console.error(error)
+  }
+})
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {

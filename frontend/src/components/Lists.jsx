@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 const Lists = ({ list }) => (
-  <Link key={list._id} to={`/${list._id}`}>
-    <div className="box" onClick={() => alert(`Klikattu ${list._id}`)}>
+  <Link to={`/${list._id}`}>
+    <div className="box">
       <p>{list.name}</p>
     </div>
   </Link>
